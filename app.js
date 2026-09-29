@@ -18,6 +18,7 @@ const CATEGORIES = [
   { id: "electronics", name: "Electronics", emoji: "🔌" },
   { id: "homekitchen", name: "Home & Kitchen", emoji: "🏠" },
   { id: "beauty",      name: "Beauty & Personal Care", emoji: "🧴" },
+  { id: "gemstones",   name: "Gemstones", emoji: "💎" },
 ];
 
 /* ============================================================
@@ -32,7 +33,7 @@ const CATEGORIES = [
      name     : product name
      category : must match one of the category ids above
                ("handicrafts", "dryfruits", "clothing",
-                "electronics", "homekitchen", "beauty")
+                "electronics", "homekitchen", "beauty", "gemstones")
      price    : number, in PKR (no commas)
      desc     : short description
      emoji    : an emoji used as the product's placeholder image
@@ -76,6 +77,14 @@ const PRODUCTS = [
   { id: "p22", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Day_cream_02.jpg/960px-Day_cream_02.jpg", name: "Walnut Shell Face Scrub",      category: "beauty", price: 550, desc: "Gentle natural exfoliating scrub.",                    emoji: "🧖" },
   { id: "p23", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Aleppo_soap_01.jpg/960px-Aleppo_soap_01.jpg", name: "Herbal Soap Bars — Pack of 3", category: "beauty", price: 650, desc: "Handmade herbal soaps with mountain botanicals.",      emoji: "🧼" },
   { id: "p24", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Care_peach_shampoo_%282019%29_03.jpg/960px-Care_peach_shampoo_%282019%29_03.jpg", name: "Mountain Herb Shampoo — 250 ml", category: "beauty", price: 800, desc: "Herbal shampoo for strong, shiny hair.",             emoji: "🧴", badge: "New" },
+
+  // ---- Gemstones (SAMPLE prices — replace with your own catalogue prices) ----
+  { id: "p25", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Aquamarine_%28GeoDIL_number_-_904%29.jpg/960px-Aquamarine_%28GeoDIL_number_-_904%29.jpg", name: "Aquamarine Crystal — Natural", category: "gemstones", price: 45000, desc: "Sky-blue natural aquamarine, famed in the Shigar valley mines.", emoji: "💎" },
+  { id: "p26", image: "https://upload.wikimedia.org/wikipedia/commons/2/23/Tourmaline-139750.jpg", name: "Tourmaline Crystal — Pink-Green", category: "gemstones", price: 60000, desc: "Striking bi-color tourmaline crystal from Gilgit-Baltistan.", emoji: "💎", badge: "Rare" },
+  { id: "p27", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/2_blue_topaz_crystals.jpg/960px-2_blue_topaz_crystals.jpg", name: "Blue Topaz — Facet Grade", category: "gemstones", price: 18000, desc: "Clear blue topaz, ideal for cutting and jewelry.", emoji: "💎" },
+  { id: "p28", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Almandine_garnet_1.jpg/960px-Almandine_garnet_1.jpg", name: "Red Garnet — Almandine", category: "gemstones", price: 25000, desc: "Deep-red almandine garnet crystals, collector grade.", emoji: "💎" },
+  { id: "p29", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/%28Muzo%29_Emerald_crystal_in_its_matrix.jpg/960px-%28Muzo%29_Emerald_crystal_in_its_matrix.jpg", name: "Emerald in Matrix — Specimen", category: "gemstones", price: 150000, desc: "Vivid green emerald crystal in natural host rock.", emoji: "💎", badge: "New" },
+  { id: "p30", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Lapis-lazuli_hg.jpg/960px-Lapis-lazuli_hg.jpg", name: "Lapis Lazuli — Premium Blue", category: "gemstones", price: 35000, desc: "Intense blue lapis with golden pyrite flecks, Hindu Kush origin.", emoji: "💎" },
 ];
 
 /* ---------------- state ---------------- */
