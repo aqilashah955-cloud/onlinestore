@@ -338,6 +338,22 @@ body {
 }
 .add-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(31, 107, 68, 0.4); filter: brightness(1.06); }
 .add-btn:active { transform: scale(0.95); }
+.card-actions { display: flex; gap: 8px; align-items: center; }
+.book-btn {
+  background: transparent;
+  color: var(--green-700);
+  border: 2px solid var(--green-700);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.16s ease, background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+.book-btn:hover { background: var(--green-700); color: #fff; transform: translateY(-2px); }
+.book-btn:active { transform: scale(0.95); }
 .empty-msg { text-align: center; color: var(--muted); padding: 48px 0; grid-column: 1 / -1; font-size: 1.02rem; }
 
 /* ================= about strip ================= */
@@ -564,6 +580,8 @@ footer .fine { margin-top: 8px; font-size: 0.8rem; opacity: 0.65; }
   .card-desc { font-size: 0.8rem; }
   .price { font-size: 0.98rem; }
   .add-btn { padding: 8px 12px; font-size: 0.8rem; }
+  .book-btn { padding: 6px 10px; font-size: 0.8rem; }
+  .card-actions { gap: 6px; }
 }
 
 /* ================= reduced motion ================= */

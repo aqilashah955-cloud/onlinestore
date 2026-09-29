@@ -163,6 +163,9 @@ function renderProducts() {
     const cat = categoryById(p.category);
     const card = document.createElement("div");
     card.className = "card";
+    const bookUrl = "mailto:" + ORDER_EMAIL
+      + "?subject=" + encodeURIComponent("Booking — " + p.name + " (" + STORE_NAME + ")")
+      + "&body=" + encodeURIComponent("Hello,\n\nI would like to book this product:\n\n" + p.name + " — " + fmt(p.price) + "\n\nName: \nPhone: \nAddress: ");
     card.innerHTML =
       '<div class="card-visual">' +
         '<span class="card-fallback" aria-hidden="true">' + p.emoji + "</span>" +
@@ -176,7 +179,10 @@ function renderProducts() {
         '<p class="card-desc">' + p.desc + "</p>" +
         '<div class="card-row">' +
           '<span class="price">' + fmt(p.price) + "</span>" +
-          '<button class="add-btn" data-id="' + p.id + '">Add to Cart</button>' +
+          '<div class="card-actions">' +
+            '<a class="book-btn" href="' + bookUrl + '">Book Now</a>' +
+            '<button class="add-btn" data-id="' + p.id + '">Add to Cart</button>' +
+          "</div>" +
         "</div>" +
       "</div>";
     grid.appendChild(card);
