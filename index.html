@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chitral Bazaar — Online Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-logo">🏔️</span>
+        <span id="storeName">Chitral Bazaar</span>
+      </div>
+      <input id="searchInput" type="search" placeholder="Search products…" aria-label="Search products" />
+      <button id="cartBtn" class="cart-btn" aria-label="Open cart">
+        🛒 Cart <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 id="heroTitle">Welcome to Chitral Bazaar</h1>
+    <p>Handpicked goods from the valleys of Chitral — delivered across Pakistan.</p>
+    <div id="categoryPills" class="pills"></div>
+  </section>
+
+  <main>
+    <section class="products-section">
+      <div id="productGrid" class="grid"></div>
+    </section>
+
+    <section class="about">
+      <div class="about-card">🚚<h3>Delivery Across Pakistan</h3><p>We ship to every city, town and village.</p></div>
+      <div class="about-card">💵<h3>Cash on Delivery</h3><p>Pay in cash when your order arrives.</p></div>
+      <div class="about-card">🤝<h3>Local Artisans</h3><p>Authentic products sourced from Chitral.</p></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Questions about an order? <a id="waLink" href="#" target="_blank" rel="noopener">Chat with us on WhatsApp</a></p>
+    <p class="fine">© <span id="year"></span> <span class="store-name-foot">Chitral Bazaar</span>. All rights reserved.</p>
+  </footer>
+
+  <div id="cartOverlay" class="overlay"></div>
+
+  <aside id="cartDrawer" class="drawer" aria-label="Shopping cart">
+    <div class="drawer-head">
+      <h2>Your Cart</h2>
+      <button id="closeCart" class="icon-btn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div id="cartView">
+      <p id="cartEmpty" class="empty-msg">Your cart is empty. Add something you like! 🛍️</p>
+      <div id="cartItems"></div>
+      <div id="cartFooter" class="cart-footer">
+        <div class="totals">
+          <div class="total-row"><span>Subtotal</span><span id="cartSubtotal">Rs 0</span></div>
+          <div class="total-row grand"><span>Total</span><span id="cartTotal">Rs 0</span></div>
+          <p class="delivery-note">Delivery charges confirmed on WhatsApp.</p>
+        </div>
+        <button id="checkoutBtn" class="primary-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <div id="checkoutView" style="display:none">
+      <button id="backToCartBtn" class="link-btn">← Back to cart</button>
+      <h3>Checkout</h3>
+      <form id="checkoutForm" onsubmit="return false;">
+        <label>Full name
+          <input id="coName" type="text" placeholder="Your full name" />
+        </label>
+        <label>Phone number
+          <input id="coPhone" type="tel" placeholder="03xxxxxxxxx" />
+        </label>
+        <label>City / Address
+          <textarea id="coAddress" rows="2" placeholder="House, street, city"></textarea>
+        </label>
+        <label>Payment method
+          <select id="coPayment">
+            <option>Cash on Delivery</option>
+            <option>Bank Transfer</option>
+            <option>Easypaisa / JazzCash</option>
+          </select>
+        </label>
+        <label>Order notes (optional)
+          <textarea id="coNotes" rows="2" placeholder="Anything we should know?"></textarea>
+        </label>
+        <p id="orderNote" class="order-note"></p>
+        <button id="placeOrderBtn" class="primary-btn" type="button">Place Order via WhatsApp</button>
+      </form>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
