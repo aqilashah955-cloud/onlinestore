@@ -5,10 +5,13 @@
    WHATSAPP_NUMBER  : your WhatsApp number in international format
                       (country code + number, no "+", no spaces).
                       Order messages are sent here on checkout.
+   ORDER_EMAIL      : your email address. Shoppers can also send
+                      their order here via the email button.
    CURRENCY         : price prefix shown before amounts.
    ============================================================ */
 const STORE_NAME = "Chitral Bazaar";
 const WHATSAPP_NUMBER = "923456121725";
+const ORDER_EMAIL = "nizarsyed74@gmail.com";
 const CURRENCY = "Rs";
 
 const CATEGORIES = [
@@ -322,7 +325,12 @@ function placeOrder() {
   if (notes) lines.push("Notes: " + notes);
 
   const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
-  note.textContent = "Opening WhatsApp with your order…";
+  const emailBody = lines.map(function (l) { return l.replace(/\*/g, ""); }).join("\n");
+  const emailUrl = "mailto:" + ORDER_EMAIL
+    + "?subject=" + encodeURIComponent("New Order — " + STORE_NAME)
+    + "&body=" + encodeURIComponent(emailBody);
+  note.innerHTML = "Opening WhatsApp with your order… Prefer email? "
+    + "<a href=\"" + emailUrl + "\">Send order via Email</a>";
   cart = {};
   saveCart();
   renderCart();
@@ -337,6 +345,8 @@ document.addEventListener("DOMContentLoaded", function () {
   renderCart();
 
   $("waLink").href = "https://wa.me/" + WHATSAPP_NUMBER;
+  $("emailLink").href = "mailto:" + ORDER_EMAIL;
+  $("emailLink").textContent = ORDER_EMAIL;
   $("year").textContent = new Date().getFullYear();
 
   $("searchInput").addEventListener("input", function (e) {
