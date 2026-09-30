@@ -379,6 +379,93 @@ body {
 .about-card h3 { font-size: 1.02rem; margin: 10px 0 6px; font-family: var(--font-display); }
 .about-card p { font-size: 0.88rem; color: var(--muted); }
 
+/* ================= promo bar ================= */
+.promo-bar {
+  background: linear-gradient(90deg, var(--gold-300), var(--gold-500));
+  color: #3a2503;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 9px 46px 9px 16px;
+  position: relative;
+  z-index: 60;
+}
+.promo-bar strong { font-weight: 800; letter-spacing: 0.5px; }
+.promo-close {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #3a2503;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.promo-close:hover { background: rgba(0, 0, 0, 0.08); }
+
+/* ================= shop by collection ================= */
+.collections-section { max-width: 1160px; margin: 0 auto; padding: 30px 20px 4px; }
+.collections-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--green-900);
+  margin-bottom: 16px;
+  text-align: center;
+}
+.collection-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+.collection-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-sm);
+  font-family: inherit;
+  min-height: 44px;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+.collection-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.collection-emoji { font-size: 2rem; line-height: 1; }
+.collection-name { font-weight: 800; font-size: 0.92rem; color: var(--green-900); text-align: center; }
+.collection-count { font-size: 0.78rem; color: var(--muted); }
+
+/* ================= gift card promo ================= */
+.giftcard-promo { max-width: 1160px; margin: 0 auto; padding: 26px 20px 4px; }
+.giftcard-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(135deg, var(--green-900), var(--green-700));
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(246, 196, 83, 0.35);
+}
+.giftcard-emoji { font-size: 2.6rem; line-height: 1; }
+.giftcard-text { flex: 1; }
+.giftcard-text h2 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; }
+.giftcard-text p { font-size: 0.92rem; opacity: 0.9; }
+.giftcard-btn {
+  width: auto;
+  white-space: nowrap;
+  background: linear-gradient(135deg, var(--gold-300), var(--gold-500));
+  color: #3a2503;
+  box-shadow: 0 6px 18px rgba(232, 160, 32, 0.4);
+}
+
 /* ================= footer ================= */
 footer {
   background: linear-gradient(180deg, var(--green-900), var(--green-950));
@@ -388,6 +475,23 @@ footer {
   font-size: 0.95rem;
   border-top: 1px solid rgba(246, 196, 83, 0.25);
 }
+.footer-inner {
+  max-width: 1160px;
+  margin: 0 auto 22px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 26px;
+  text-align: left;
+}
+.footer-col h3 {
+  font-family: var(--font-display);
+  color: var(--gold-300);
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+.footer-col p { font-size: 0.88rem; opacity: 0.85; margin-bottom: 8px; }
+.footer-cats { list-style: none; }
+.footer-cats li { margin-bottom: 7px; }
 footer a {
   color: var(--gold-300);
   font-weight: 700;
@@ -512,6 +616,47 @@ footer .fine { margin-top: 8px; font-size: 0.8rem; opacity: 0.65; }
 }
 .remove-btn:hover { opacity: 1; transform: scale(1.15); }
 .cart-footer { padding: 18px 20px; border-top: 1px solid var(--border); background: var(--bg); }
+.coupon-box { margin-bottom: 12px; }
+.coupon-form { display: flex; gap: 8px; }
+#couponInput {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  min-height: 44px;
+}
+.coupon-btn {
+  background: linear-gradient(135deg, var(--gold-300), var(--gold-500));
+  color: #3a2503;
+  border: none;
+  border-radius: 12px;
+  padding: 11px 18px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  min-height: 44px;
+  transition: transform 0.16s ease, filter 0.2s;
+}
+.coupon-btn:hover { filter: brightness(1.05); }
+.coupon-btn:active { transform: scale(0.96); }
+.coupon-msg { font-size: 0.82rem; margin-top: 6px; min-height: 1.2em; }
+.coupon-msg.error { color: var(--danger); font-weight: 600; }
+.coupon-msg.success { color: var(--green-700); font-weight: 600; }
+.coupon-applied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--green-100);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  color: var(--green-900);
+}
+.link-btn.sm { margin: 0; font-size: 0.82rem; }
+.total-row.discount { color: var(--green-700); font-weight: 700; }
 .totals { margin-bottom: 14px; }
 .total-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
 .total-row.grand { font-weight: 800; font-size: 1.15rem; color: var(--green-900); }
@@ -574,7 +719,7 @@ footer .fine { margin-top: 8px; font-size: 0.8rem; opacity: 0.65; }
   #searchInput { order: 3; flex-basis: 100%; }
   .hero { padding: 64px 16px 60px; }
   .hero-scroll { display: none; }
-  .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+  .grid { grid-template-columns: 1fr; gap: 16px; }
   .card-body { padding: 12px; }
   .card-body h3 { font-size: 0.94rem; }
   .card-desc { font-size: 0.8rem; }
@@ -582,7 +727,23 @@ footer .fine { margin-top: 8px; font-size: 0.8rem; opacity: 0.65; }
   .add-btn { padding: 8px 12px; font-size: 0.8rem; }
   .book-btn { padding: 6px 10px; font-size: 0.8rem; }
   .card-actions { gap: 6px; }
+  /* tappable targets ≥44px */
+  .add-btn, .book-btn, .pill, .primary-btn, .cart-btn,
+  .coupon-btn, .collection-card, #couponInput { min-height: 44px; }
+  .qty button { width: 44px; height: 44px; }
+  .remove-btn { min-width: 44px; min-height: 44px; }
+  .icon-btn { width: 44px; height: 44px; }
+  /* new sections stack */
+  .collection-cards { grid-template-columns: repeat(2, 1fr); }
+  .collections-section, .giftcard-promo { padding-left: 14px; padding-right: 14px; }
+  .giftcard-inner { flex-direction: column; text-align: center; }
+  .giftcard-btn { width: 100%; }
+  .footer-inner { grid-template-columns: 1fr; gap: 18px; }
+  .promo-bar { font-size: 0.78rem; }
 }
+
+/* guard against horizontal overflow on small screens */
+body { overflow-x: hidden; }
 
 /* ================= reduced motion ================= */
 @media (prefers-reduced-motion: reduce) {

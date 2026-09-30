@@ -8,6 +8,11 @@
 </head>
 <body>
 
+  <div id="promoBar" class="promo-bar">
+    <span>🎁 Use code <strong>CHITRAL10</strong> for 10% off your order</span>
+    <button id="promoClose" class="promo-close" aria-label="Dismiss promotion">✕</button>
+  </div>
+
   <header class="site-header">
     <div class="header-inner">
       <div class="brand">
@@ -32,6 +37,22 @@
   </section>
 
   <main>
+    <section class="collections-section">
+      <h2>Shop by Collection</h2>
+      <div id="collectionCards" class="collection-cards"></div>
+    </section>
+
+    <section class="giftcard-promo">
+      <div class="giftcard-inner">
+        <span class="giftcard-emoji" aria-hidden="true">💳</span>
+        <div class="giftcard-text">
+          <h2>Gift Cards</h2>
+          <p>Give the gift of choice — our gift cards work on every product in the store.</p>
+        </div>
+        <button id="giftCardBtn" class="primary-btn giftcard-btn" type="button">Shop Gift Cards</button>
+      </div>
+    </section>
+
     <section class="products-section">
       <div id="productGrid" class="grid"></div>
     </section>
@@ -44,7 +65,21 @@
   </main>
 
   <footer>
-    <p>Questions about an order? <a id="waLink" href="#" target="_blank" rel="noopener">Chat with us on WhatsApp</a> or <a id="emailLink" href="#">email us</a></p>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3 id="footerStoreName">Chitral Bazaar</h3>
+        <p>Handpicked goods from the valleys of Chitral — handicrafts, dry fruits, clothing, gemstones and more, delivered across Pakistan.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Shop</h3>
+        <ul id="footerCats" class="footer-cats"></ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a id="waLink" href="#" target="_blank" rel="noopener">💬 WhatsApp: +92 345 6121725</a></p>
+        <p><a id="emailLink" href="#">📧 Email us</a></p>
+      </div>
+    </div>
     <p class="fine">© <span id="year"></span> <span class="store-name-foot">Chitral Bazaar</span>. All rights reserved.</p>
   </footer>
 
@@ -60,8 +95,20 @@
       <p id="cartEmpty" class="empty-msg">Your cart is empty. Add something you like! 🛍️</p>
       <div id="cartItems"></div>
       <div id="cartFooter" class="cart-footer">
+        <div class="coupon-box">
+          <div id="couponForm" class="coupon-form">
+            <input id="couponInput" type="text" placeholder="Coupon code" aria-label="Coupon code" autocomplete="off" />
+            <button id="couponApplyBtn" class="coupon-btn" type="button">Apply</button>
+          </div>
+          <p id="couponMsg" class="coupon-msg" role="status"></p>
+          <div id="couponApplied" class="coupon-applied" style="display:none">
+            <span>🎟️ <strong id="couponCodeLabel"></strong> applied</span>
+            <button id="couponRemoveBtn" class="link-btn sm" type="button">Remove</button>
+          </div>
+        </div>
         <div class="totals">
           <div class="total-row"><span>Subtotal</span><span id="cartSubtotal">Rs 0</span></div>
+          <div id="discountRow" class="total-row discount" style="display:none"><span id="discountLabel">Discount</span><span id="cartDiscount">−Rs 0</span></div>
           <div class="total-row grand"><span>Total</span><span id="cartTotal">Rs 0</span></div>
           <p class="delivery-note">Delivery charges confirmed on WhatsApp.</p>
         </div>

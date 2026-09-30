@@ -7,12 +7,18 @@
                       Order messages are sent here on checkout.
    ORDER_EMAIL      : your email address. Shoppers can also send
                       their order here via the email button.
+   COUPONS          : discount codes shoppers can apply in the cart
+                      (percent off; codes are case-insensitive).
    CURRENCY         : price prefix shown before amounts.
    ============================================================ */
 const STORE_NAME = "Chitral Bazaar";
 const WHATSAPP_NUMBER = "923456121725";
 const ORDER_EMAIL = "nizarsyed74@gmail.com";
 const CURRENCY = "Rs";
+
+/* Discount coupons: code -> percent off */
+const COUPONS = { CHITRAL10: 10, FESTIVE15: 15, WELCOME20: 20 };
+const COUPON_KEY = "chitralbazaar_coupon_v1";
 
 const CATEGORIES = [
   { id: "handicrafts", name: "Handicrafts", emoji: "🧶" },
@@ -22,6 +28,7 @@ const CATEGORIES = [
   { id: "homekitchen", name: "Home & Kitchen", emoji: "🏠" },
   { id: "beauty",      name: "Beauty & Personal Care", emoji: "🧴" },
   { id: "gemstones",   name: "Gemstones", emoji: "💎" },
+  { id: "giftcards",   name: "Gift Cards", emoji: "💳" },
 ];
 
 /* ============================================================
@@ -36,7 +43,8 @@ const CATEGORIES = [
      name     : product name
      category : must match one of the category ids above
                ("handicrafts", "dryfruits", "clothing",
-                "electronics", "homekitchen", "beauty", "gemstones")
+                "electronics", "homekitchen", "beauty", "gemstones",
+                "giftcards")
      price    : number, in PKR (no commas)
      desc     : short description
      emoji    : an emoji used as the product's placeholder image
@@ -110,6 +118,32 @@ const PRODUCTS = [
   { id: "p48", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Briefs.jpg/500px-Briefs.jpg", name: "Men's Cotton Briefs — Underwear (3-pack)", category: "clothing", price: 1200, desc: "Pack of 3 breathable cotton briefs, everyday essentials.", emoji: "🩲" },
   { id: "p49", image: "https://i5.walmartimages.com/asr/7d4288cd-6253-483f-90d6-3a3a9a410bba.d2f8a3a2f3e2976a6f440d6f06a67233.jpeg", name: "Men's Cotton Vest — Undershirt", category: "clothing", price: 650, desc: "Sleeveless cotton vest, soft innerwear for daily wear.", emoji: "🎽" },
   { id: "p50", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Navy_blazer_jacket.jpg/1280px-Navy_blazer_jacket.jpg", name: "Men's Formal Blazer", category: "clothing", price: 9500, desc: "Tailored formal blazer, perfect for events and office.", emoji: "🤵", badge: "New" },
+
+  // ---- Gift Cards (SAMPLE prices — replace with your own catalogue prices) ----
+  { id: "p51", image: "https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL3Jhd3BpeGVsX29mZmljZV8zNV9waG90b19vZl93aGl0ZV9naWZ0X2JveF93aXRoX3JlZF9yaWJib25fX2lzb19lOWRkZmNlOC05ZDljLTQ0ZjUtODc3Mi05NzhhODliMDdmNGJfMS5qcGc.jpg", name: "Gift Card — Rs 1,000", category: "giftcards", price: 1000, desc: "Rs 1,000 gift card — the gift code is sent via WhatsApp or email after purchase, redeemable on any product.", emoji: "🎁", badge: "New" },
+  { id: "p52", image: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Giving_a_gift.jpg", name: "Gift Card — Rs 2,500", category: "giftcards", price: 2500, desc: "Rs 2,500 gift card — the gift code is sent via WhatsApp or email after purchase, redeemable on any product.", emoji: "🎁" },
+  { id: "p53", image: "https://images.pexels.com/photos/10278973/pexels-photo-10278973.jpeg?auto=compress&w=1260&h=750&dpr=1", name: "Gift Card — Rs 5,000", category: "giftcards", price: 5000, desc: "Rs 5,000 gift card — the gift code is sent via WhatsApp or email after purchase, redeemable on any product.", emoji: "🎀" },
+  { id: "p54", image: "https://images.pexels.com/photos/5486845/pexels-photo-5486845.jpeg?auto=compress&cs=tinysrgb&w=600", name: "Gift Card — Rs 10,000", category: "giftcards", price: 10000, desc: "Rs 10,000 gift card — the gift code is sent via WhatsApp or email after purchase, redeemable on any product.", emoji: "🎀" },
+
+  // ---- More clothing (SAMPLE prices — replace with real prices) ----
+  { id: "p55", image: "https://images.pexels.com/photos/36325962/pexels-photo-36325962/free-photo-of-elegant-portrait-of-woman-in-pakistani-embroidered-dress.jpeg?auto=compress&cs=tinysrgb&w=600&loading=lazy", name: "Women's Embroidered Frock", category: "clothing", price: 3200, desc: "Elegant cream frock with intricate Pakistani embroidery and dupatta.", emoji: "👗", badge: "New" },
+  { id: "p56", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Embroidered-pashmina-shawl.jpg/960px-Embroidered-pashmina-shawl.jpg", name: "Women's Pashmina Shawl", category: "clothing", price: 3500, desc: "Luxurious pashmina shawl with vivid floral embroidery.", emoji: "🧣" },
+  { id: "p57", image: "https://upload.wikimedia.org/wikipedia/commons/2/21/In_my_salwar_suit.jpg", name: "Women's Lawn Suit — 3 Piece", category: "clothing", price: 2800, desc: "Classic 3-piece lawn suit, breathable fabric for summer.", emoji: "👚" },
+  { id: "p58", image: "https://images.pexels.com/photos/8989608/pexels-photo-8989608.jpeg?auto=compress&cs=tinysrgb&w=800", name: "Women's Jeans", category: "clothing", price: 2200, desc: "Classic blue denim jeans with a comfortable modern fit.", emoji: "👖" },
+  { id: "p59", image: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Clothing_worn_by_most_Pashtun_males.jpg", name: "Men's Shalwar Kameez", category: "clothing", price: 3500, desc: "Traditional light shalwar kameez with waistcoat, timeless style.", emoji: "👔" },
+  { id: "p60", image: "https://images.pexels.com/photos/3889627/pexels-photo-3889627.jpeg?auto=compress&cs=tinysrgb&w=600&loading=lazy", name: "Men's Jeans", category: "clothing", price: 2400, desc: "Slim-fit blue jeans, durable everyday denim.", emoji: "👖" },
+  { id: "p61", image: "https://images.pexels.com/photos/28873299/pexels-photo-28873299/free-photo-of-stylish-man-in-black-leather-jacket-outdoors.jpeg?w=600", name: "Men's Leather Jacket", category: "clothing", price: 8500, desc: "Premium black leather jacket with shearling collar.", emoji: "🧥", badge: "Popular" },
+  { id: "p62", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Standing_man_in_sportwear.jpg/960px-Standing_man_in_sportwear.jpg", name: "Men's Track Suit", category: "clothing", price: 3200, desc: "Full tracksuit — jacket and track pants for sport and leisure.", emoji: "🏃" },
+
+  // ---- More gemstones (SAMPLE prices — replace with your own catalogue prices) ----
+  { id: "p63", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Honey_nephrite_pendant.jpg/960px-Honey_nephrite_pendant.jpg", name: "Nephrite — Well Polished Handcrafted Carving", category: "gemstones", price: 75000, desc: "Hand-carved honey nephrite pendant with floral relief and a mirror polish — prized in Pakistan's northern gemstone trade.", emoji: "🟡", badge: "Rare" },
+  { id: "p64", image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Turquoise-29507.jpg", name: "Turquoise", category: "gemstones", price: 22000, desc: "Polished turquoise nodule with natural matrix veining in vivid sky blue.", emoji: "🩵" },
+  { id: "p65", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Polished_quartz.JPG/960px-Polished_quartz.JPG", name: "Dur-e-Najaf", category: "gemstones", price: 15000, desc: "Crystal-clear polished Dur-e-Najaf quartz with glass-like transparency.", emoji: "💎" },
+  { id: "p66", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Black_oval_onyx_cabochons_1.jpg/960px-Black_oval_onyx_cabochons_1.jpg", name: "Mohe Najaf", category: "gemstones", price: 12000, desc: "Jet-black Mohe Najaf polished cabochons with a deep mirror shine.", emoji: "⚫" },
+  { id: "p67", image: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Gemperidot.JPG", name: "Peridot", category: "gemstones", price: 28000, desc: "Faceted peridot glowing with vivid olive-green fire, from the northern valleys.", emoji: "🫒", badge: "New" },
+  { id: "p68", image: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Cut_Ruby.jpg", name: "Ruby", category: "gemstones", price: 90000, desc: "Faceted oval ruby with a rich pinkish-red glow.", emoji: "❤️" },
+  { id: "p69", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Amatista_Piedra_Pulida.jpg/960px-Amatista_Piedra_Pulida.jpg", name: "Amethyst", category: "gemstones", price: 18000, desc: "Smooth polished amethyst in soft violet hues.", emoji: "💜" },
+  { id: "p70", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/2_Smoky_quartz.JPG/960px-2_Smoky_quartz.JPG", name: "Smoky Quartz", category: "gemstones", price: 14000, desc: "Faceted smoky quartz in warm cognac-brown tones.", emoji: "🤎" },
 ];
 
 /* ---------------- state ---------------- */
@@ -117,6 +151,29 @@ const CART_KEY = "chitralbazaar_cart_v1";
 let cart = loadCart();          // { productId: qty }
 let activeCategory = "all";
 let searchQuery = "";
+let appliedCoupon = loadCoupon(); // { code, pct } or null
+
+function loadCoupon() {
+  try {
+    const raw = localStorage.getItem(COUPON_KEY);
+    if (!raw) return null;
+    const c = JSON.parse(raw);
+    if (c && c.code && COUPONS[String(c.code).toUpperCase()] != null) {
+      return { code: String(c.code).toUpperCase(), pct: COUPONS[String(c.code).toUpperCase()] };
+    }
+    return null;
+  } catch (e) { return null; }
+}
+function saveCoupon() {
+  try {
+    if (appliedCoupon) localStorage.setItem(COUPON_KEY, JSON.stringify(appliedCoupon));
+    else localStorage.removeItem(COUPON_KEY);
+  } catch (e) {}
+}
+/* discount = round(subtotal * pct/100) */
+function couponDiscount(subtotal) {
+  return appliedCoupon ? Math.round(subtotal * appliedCoupon.pct / 100) : 0;
+}
 
 /* ---------------- helpers ---------------- */
 function fmt(n) {
@@ -165,6 +222,71 @@ function renderPills() {
       renderProducts();
     });
     wrap.appendChild(btn);
+  });
+}
+
+function filterToCategory(id) {
+  activeCategory = id;
+  renderPills();
+  renderProducts();
+  var grid = document.getElementById("productGrid");
+  if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/* ---------------- shop-by-collection cards ---------------- */
+function renderCollections() {
+  const wrap = $("collectionCards");
+  if (!wrap) return;
+  wrap.innerHTML = "";
+  CATEGORIES.forEach(function (c) {
+    const count = PRODUCTS.filter(function (p) { return p.category === c.id; }).length;
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "collection-card";
+    card.innerHTML =
+      '<span class="collection-emoji" aria-hidden="true">' + c.emoji + "</span>" +
+      '<span class="collection-name">' + c.name + "</span>" +
+      '<span class="collection-count">' + count + (count === 1 ? " item" : " items") + "</span>";
+    card.addEventListener("click", function () { filterToCategory(c.id); });
+    wrap.appendChild(card);
+  });
+}
+
+/* ---------------- footer category links ---------------- */
+function renderFooterCats() {
+  const ul = $("footerCats");
+  if (ul) {
+    ul.innerHTML = "";
+    CATEGORIES.forEach(function (c) {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = "#productGrid";
+      a.textContent = c.emoji + " " + c.name;
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        filterToCategory(c.id);
+      });
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  }
+  const footName = $("footerStoreName");
+  if (footName) footName.textContent = STORE_NAME;
+}
+
+/* ---------------- promo bar ---------------- */
+function initPromoBar() {
+  const bar = $("promoBar");
+  if (!bar) return;
+  try {
+    if (localStorage.getItem("chitralbazaar_promo_dismissed") === "1") {
+      bar.style.display = "none";
+      return;
+    }
+  } catch (e) {}
+  $("promoClose").addEventListener("click", function () {
+    bar.style.display = "none";
+    try { localStorage.setItem("chitralbazaar_promo_dismissed", "1"); } catch (e) {}
   });
 }
 
@@ -275,8 +397,52 @@ function renderCart() {
       else if (act === "rm") removeItem(id);
     });
   });
-  $("cartSubtotal").textContent = fmt(cartTotal());
-  $("cartTotal").textContent = fmt(cartTotal());
+  const subtotal = cartTotal();
+  const discount = couponDiscount(subtotal);
+  $("cartSubtotal").textContent = fmt(subtotal);
+  const dRow = $("discountRow");
+  if (discount > 0 && appliedCoupon) {
+    dRow.style.display = "flex";
+    $("discountLabel").textContent = "Discount (" + appliedCoupon.code + ")";
+    $("cartDiscount").textContent = "−" + fmt(discount);
+  } else {
+    dRow.style.display = "none";
+  }
+  $("cartTotal").textContent = fmt(subtotal - discount);
+
+  const hasCoupon = !!appliedCoupon;
+  $("couponForm").style.display = hasCoupon ? "none" : "flex";
+  $("couponApplied").style.display = hasCoupon ? "flex" : "none";
+  if (hasCoupon) $("couponCodeLabel").textContent = appliedCoupon.code;
+}
+
+/* ---------------- coupons ---------------- */
+function applyCoupon() {
+  const msg = $("couponMsg");
+  const code = $("couponInput").value.trim().toUpperCase();
+  if (!code) {
+    msg.textContent = "Please enter a coupon code.";
+    msg.className = "coupon-msg error";
+    return;
+  }
+  if (COUPONS[code] != null) {
+    appliedCoupon = { code: code, pct: COUPONS[code] };
+    saveCoupon();
+    $("couponInput").value = "";
+    msg.textContent = "🎉 Code applied — " + COUPONS[code] + "% off!";
+    msg.className = "coupon-msg success";
+    renderCart();
+  } else {
+    msg.textContent = "Invalid coupon code. Please try again.";
+    msg.className = "coupon-msg error";
+  }
+}
+function removeCoupon() {
+  appliedCoupon = null;
+  saveCoupon();
+  $("couponMsg").textContent = "";
+  $("couponMsg").className = "coupon-msg";
+  renderCart();
 }
 
 /* ---------------- cart actions ---------------- */
@@ -335,6 +501,10 @@ function placeOrder() {
   if (!/^[+\d][\d\s-]{6,}$/.test(phone)) { note.textContent = "Please enter a valid phone number."; return; }
   if (!address) { note.textContent = "Please enter your city / address."; return; }
 
+  const subtotal = cartTotal();
+  const discount = couponDiscount(subtotal);
+  const orderTotal = subtotal - discount;
+
   const lines = [];
   lines.push("*New Order — " + STORE_NAME + "*");
   lines.push("--------------------------");
@@ -344,7 +514,11 @@ function placeOrder() {
     lines.push(cart[id] + " × " + p.name + " — " + fmt(p.price * cart[id]));
   });
   lines.push("--------------------------");
-  lines.push("Total: " + fmt(cartTotal()));
+  lines.push("Subtotal: " + fmt(subtotal));
+  if (discount > 0 && appliedCoupon) {
+    lines.push("Discount (" + appliedCoupon.code + "): -" + fmt(discount));
+  }
+  lines.push("Total: " + fmt(orderTotal));
   lines.push("");
   lines.push("Name: " + name);
   lines.push("Phone: " + phone);
@@ -360,7 +534,9 @@ function placeOrder() {
   note.innerHTML = "Opening WhatsApp with your order… Prefer email? "
     + "<a href=\"" + emailUrl + "\">Send order via Email</a>";
   cart = {};
+  appliedCoupon = null;
   saveCart();
+  saveCoupon();
   renderCart();
   setTimeout(function () { window.location.href = url; }, 1200);
 }
@@ -369,12 +545,15 @@ function placeOrder() {
 document.addEventListener("DOMContentLoaded", function () {
   renderStoreName();
   renderPills();
+  renderCollections();
+  renderFooterCats();
   renderProducts();
   renderCart();
+  initPromoBar();
 
   $("waLink").href = "https://wa.me/" + WHATSAPP_NUMBER;
   $("emailLink").href = "mailto:" + ORDER_EMAIL;
-  $("emailLink").textContent = ORDER_EMAIL;
+  $("emailLink").textContent = "📧 " + ORDER_EMAIL;
   $("year").textContent = new Date().getFullYear();
 
   $("searchInput").addEventListener("input", function (e) {
@@ -387,4 +566,10 @@ document.addEventListener("DOMContentLoaded", function () {
   $("checkoutBtn").addEventListener("click", showCheckoutView);
   $("backToCartBtn").addEventListener("click", showCartView);
   $("placeOrderBtn").addEventListener("click", placeOrder);
+  $("couponApplyBtn").addEventListener("click", applyCoupon);
+  $("couponRemoveBtn").addEventListener("click", removeCoupon);
+  $("couponInput").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); applyCoupon(); }
+  });
+  $("giftCardBtn").addEventListener("click", function () { filterToCategory("giftcards"); });
 });
