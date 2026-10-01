@@ -40,27 +40,19 @@ const CATEGORIES = [
 ];
 
 const VALLEYS = [
-  { id: "chitral-town",  name: "Chitral Town",  emoji: "🏘️" },
-  { id: "booni",         name: "Booni",         emoji: "🌄" },
-  { id: "mastuj",        name: "Mastuj",        emoji: "⛰️" },
-  { id: "reshun",        name: "Reshun",        emoji: "🍎" },
-  { id: "drosh",         name: "Drosh",         emoji: "🌿" },
-  { id: "garam-chashma", name: "Garam Chashma", emoji: "♨️" },
-  { id: "bumburet",      name: "Bumburet",      emoji: "🏔️" },
-  { id: "rumbur",        name: "Rumbur",        emoji: "🌸" },
-  { id: "birir",         name: "Birir",         emoji: "🗻" },
-  { id: "chitral",       name: "Chitral (general)", emoji: "📍" },
+  { id: "upper-chitral", name: "Upper Chitral", emoji: "⛰️" },
+  { id: "lower-chitral", name: "Lower Chitral", emoji: "🌄" },
 ];
 
 /* Sample maker profiles (demo names — replace with real artisan stories) */
 const MAKERS = [
-  { name: "Bibi Zara (demo)", role: "Wool weaver", village: "Booni", emoji: "🧶",
+  { name: "Bibi Zara (demo)", role: "Wool weaver", village: "Upper Chitral", emoji: "🧶",
     story: "Weaves shawls and patti cloth on a wooden loom, a craft passed down through three generations of her family." },
-  { name: "Sher Wali (demo)", role: "Woodcarver", village: "Chitral Town", emoji: "🪵",
+  { name: "Sher Wali (demo)", role: "Woodcarver", village: "Lower Chitral", emoji: "🪵",
     story: "Carves keepsake boxes and kitchenware from seasoned walnut wood, finishing each piece by hand." },
-  { name: "Fazal (demo)", role: "Beekeeper", village: "Bumburet", emoji: "🍯",
-    story: "Keeps hives in the high pastures above Bumburet and harvests honey twice a year, in spring and late summer." },
-  { name: "Nasreen (demo)", role: "Embroiderer", village: "Drosh", emoji: "🪡",
+  { name: "Fazal (demo)", role: "Beekeeper", village: "Lower Chitral", emoji: "🍯",
+    story: "Keeps hives in the high pastures of Lower Chitral and harvests honey twice a year, in spring and late summer." },
+  { name: "Nasreen (demo)", role: "Embroiderer", village: "Lower Chitral", emoji: "🪡",
     story: "Stitches traditional Chitrali embroidery onto bags, purses and wall pieces, often working with a small group of neighbours." },
 ];
 
@@ -70,11 +62,11 @@ const PRODUCTS = [
     "added": "2026-07-02",
     "bestseller": true,
     "category": "dryfoods",
-    "desc": "Sweet sun-dried apricots from the orchards of Booni.",
+    "desc": "Sweet sun-dried apricots from the orchards of Upper Chitral.",
     "emoji": "🍑",
     "featured": true,
     "id": "f01",
-    "longDesc": "Whole apricots picked ripe from family orchards in Booni and dried slowly in the mountain sun. Soft, chewy and naturally sweet — the classic Chitrali khubani.",
+    "longDesc": "Whole apricots picked ripe from family orchards in Upper Chitral and dried slowly in the mountain sun. Soft, chewy and naturally sweet — the classic Chitrali khubani.",
     "materials": "Apricots",
     "method": "Sun-dried on rooftops and courtyards",
     "name": "Sun-Dried Chitrali Khubani",
@@ -88,8 +80,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "booni",
-    "village": "Booni",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "500 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Turkey_dried_apricots.jpg/960px-Turkey_dried_apricots.jpg",
     "images": [
@@ -117,8 +109,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "mastuj",
-    "village": "Mastuj",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "500 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Apricot_kernel_in_bowl.jpg/960px-Apricot_kernel_in_bowl.jpg",
     "images": [
@@ -129,10 +121,10 @@ const PRODUCTS = [
   {
     "added": "2026-07-05",
     "category": "dryfoods",
-    "desc": "Thin-shelled walnuts from Reshun's old walnut groves.",
+    "desc": "Thin-shelled walnuts from Upper Chitral's old walnut groves.",
     "emoji": "🌰",
     "id": "f03",
-    "longDesc": "Whole walnuts from mature trees in Reshun, gathered each autumn. Thin shells, full kernels — the everyday walnut of Chitrali households.",
+    "longDesc": "Whole walnuts from mature trees in Upper Chitral, gathered each autumn. Thin shells, full kernels — the everyday walnut of Chitrali households.",
     "materials": "Walnuts",
     "method": "Harvested and air-dried",
     "name": "Chitrali Walnuts (In Shell)",
@@ -146,8 +138,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "reshun",
-    "village": "Reshun",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "1 kg",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Noces_Walnuts_Nueces.jpg/960px-Noces_Walnuts_Nueces.jpg",
     "images": [
@@ -162,7 +154,7 @@ const PRODUCTS = [
     "desc": "Hand-shelled walnut kernels, halves and large pieces.",
     "emoji": "🌰",
     "id": "f04",
-    "longDesc": "Reshun walnuts shelled by hand and sorted into halves and large pieces. Rich and crunchy — ready to eat, bake with, or gift.",
+    "longDesc": "Upper Chitral walnuts shelled by hand and sorted into halves and large pieces. Rich and crunchy — ready to eat, bake with, or gift.",
     "materials": "Walnut kernels",
     "method": "Hand-shelled and sorted",
     "name": "Walnut Kernels",
@@ -177,8 +169,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "reshun",
-    "village": "Reshun",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "500 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Whole_walnut_kernel_and_shell.jpg/960px-Whole_walnut_kernel_and_shell.jpg",
     "images": [
@@ -189,10 +181,10 @@ const PRODUCTS = [
   {
     "added": "2026-07-10",
     "category": "dryfoods",
-    "desc": "Crunchy almonds from the lower valleys around Drosh.",
+    "desc": "Crunchy almonds from the lower valleys of Chitral.",
     "emoji": "🫘",
     "id": "f05",
-    "longDesc": "Almonds grown in the warmer lower valleys near Drosh, harvested in late summer and dried in shell before packing.",
+    "longDesc": "Almonds grown in the warmer lower valleys of Chitral, harvested in late summer and dried in shell before packing.",
     "materials": "Almonds",
     "method": "Harvested and sun-dried",
     "name": "Mountain Almonds",
@@ -206,8 +198,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "drosh",
-    "village": "Drosh",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "500 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Almonds_in_a_bowl.jpg/960px-Almonds_in_a_bowl.jpg",
     "images": [
@@ -236,8 +228,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "garam-chashma",
-    "village": "Garam Chashma",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "500 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dried_mulberry_fruit.jpg/960px-Dried_mulberry_fruit.jpg",
     "images": [
@@ -248,7 +240,7 @@ const PRODUCTS = [
   {
     "added": "2026-08-03",
     "category": "dryfoods",
-    "desc": "Crisp-sweet dried apple rings from Booni orchards.",
+    "desc": "Crisp-sweet dried apple rings from Upper Chitral orchards.",
     "emoji": "🍎",
     "id": "f07",
     "longDesc": "Apples sliced into rings and dried until lightly chewy with concentrated sweetness. No additives — just apples and mountain air.",
@@ -265,8 +257,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "booni",
-    "village": "Booni",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "400 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Dried_apple_slices.jpg/960px-Dried_apple_slices.jpg",
     "images": [
@@ -277,10 +269,10 @@ const PRODUCTS = [
   {
     "added": "2026-08-20",
     "category": "dryfoods",
-    "desc": "Soft dried figs from the warm slopes near Drosh.",
+    "desc": "Soft dried figs from the warm slopes of Lower Chitral.",
     "emoji": "🫒",
     "id": "f08",
-    "longDesc": "Figs left to ripen fully on the tree, then dried whole. Soft, jammy and rich — a small-batch harvest from Drosh's warm slopes.",
+    "longDesc": "Figs left to ripen fully on the tree, then dried whole. Soft, jammy and rich — a small-batch harvest from Lower Chitral's warm slopes.",
     "materials": "Figs",
     "method": "Tree-ripened and sun-dried",
     "name": "Dried Figs",
@@ -290,12 +282,12 @@ const PRODUCTS = [
     "ptype": "Farm-produced",
     "rating": 4.7,
     "reviews": 39,
-    "story": "Figs need Chitral's warmest corners, and Drosh provides them. The harvest is small and mostly eaten locally — what reaches beyond the valley is a treat.",
+    "story": "Figs need Chitral's warmest corners, and Lower Chitral provides them. The harvest is small and mostly eaten locally — what reaches beyond the valley is a treat.",
     "tags": {
       "food": true
     },
-    "valley": "drosh",
-    "village": "Drosh",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "400 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Dried_figs.jpg/960px-Dried_figs.jpg",
     "images": [
@@ -324,8 +316,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "mastuj",
-    "village": "Mastuj",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "250 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shelled_pine_nuts.jpg/960px-Shelled_pine_nuts.jpg",
     "images": [
@@ -355,8 +347,8 @@ const PRODUCTS = [
       "food": true,
       "handmade": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "500 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Gozinaki_with_walnuts.jpg/960px-Gozinaki_with_walnuts.jpg",
     "images": [
@@ -371,7 +363,7 @@ const PRODUCTS = [
     "emoji": "🍵",
     "id": "f11",
     "isNew": true,
-    "longDesc": "A blend of dried mountain herbs gathered around Garam Chashma, mixed for a fragrant, warming brew. Brew a teaspoon per cup.",
+    "longDesc": "A blend of dried mountain herbs gathered in Lower Chitral, mixed for a fragrant, warming brew. Brew a teaspoon per cup.",
     "materials": "Dried mountain herbs",
     "method": "Hand-gathered and shade-dried, blended by hand",
     "name": "Chitrali Herbal Tea Blend",
@@ -386,8 +378,8 @@ const PRODUCTS = [
       "food": true,
       "handmade": true
     },
-    "valley": "garam-chashma",
-    "village": "Garam Chashma",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "100 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Herbal_Tea_01.jpg/960px-Herbal_Tea_01.jpg",
     "images": [
@@ -416,8 +408,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "500 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Trail_Mix.JPG/960px-Trail_Mix.JPG",
     "images": [
@@ -429,17 +421,17 @@ const PRODUCTS = [
     "added": "2026-07-01",
     "bestseller": true,
     "category": "honey",
-    "desc": "Thick wildflower honey from high Bumburet hives.",
+    "desc": "Thick wildflower honey from high-pasture hives of Lower Chitral.",
     "emoji": "🍯",
     "featured": true,
     "id": "h01",
-    "longDesc": "Honey from hives set in the high pastures above Bumburet, where bees work wild mountain flowers all summer. Thick, dark and deeply flavoured.",
+    "longDesc": "Honey from hives set in the high pastures of Lower Chitral, where bees work wild mountain flowers all summer. Thick, dark and deeply flavoured.",
     "maker": {
       "craft": "Beekeeping",
       "materials": "Hives, wildflower forage",
       "name": "Fazal (demo)",
       "time": "Seasonal harvests",
-      "village": "Bumburet"
+      "village": "Lower Chitral"
     },
     "materials": "Honey",
     "method": "Harvested twice a year, strained and jarred",
@@ -454,8 +446,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "bumburet",
-    "village": "Bumburet",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "500 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Dipper_stick_and_honey_in_a_jar.jpg/960px-Dipper_stick_and_honey_in_a_jar.jpg",
     "images": [
@@ -466,7 +458,7 @@ const PRODUCTS = [
   {
     "added": "2026-07-20",
     "category": "honey",
-    "desc": "Light spring honey from the Rumbur valley.",
+    "desc": "Light spring honey from Lower Chitral.",
     "emoji": "🍯",
     "id": "h02",
     "longDesc": "The first harvest of the year, taken in late spring when orchards and wildflowers bloom together. Light in colour with a gentle floral note.",
@@ -483,8 +475,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "rumbur",
-    "village": "Rumbur",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "500 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Dipper_stick_and_honey_in_a_jar.jpg/960px-Dipper_stick_and_honey_in_a_jar.jpg",
     "images": [
@@ -495,10 +487,10 @@ const PRODUCTS = [
   {
     "added": "2026-08-15",
     "category": "honey",
-    "desc": "Full kilo of late-summer honey from Birir.",
+    "desc": "Full kilo of late-summer honey from Lower Chitral.",
     "emoji": "🍯",
     "id": "h03",
-    "longDesc": "The main summer harvest from Birir's apiaries — a generous kilo jar of amber honey, gathered when the high meadows are at their peak.",
+    "longDesc": "The main summer harvest from Lower Chitral's apiaries — a generous kilo jar of amber honey, gathered when the high meadows are at their peak.",
     "materials": "Honey",
     "method": "Summer harvest, strained and jarred",
     "name": "Summer Harvest Honey",
@@ -508,12 +500,12 @@ const PRODUCTS = [
     "ptype": "Farm-produced",
     "rating": 4.8,
     "reviews": 64,
-    "story": "By late summer the high meadows above Birir are thick with flowers, and the hives are at their heaviest. This is the harvest beekeepers wait for all year.",
+    "story": "By late summer the high meadows of Lower Chitral are thick with flowers, and the hives are at their heaviest. This is the harvest beekeepers wait for all year.",
     "tags": {
       "food": true
     },
-    "valley": "birir",
-    "village": "Birir",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "1 kg",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Beehives_in_the_mountains_of_Bosnia.jpg/960px-Beehives_in_the_mountains_of_Bosnia.jpg",
     "images": [
@@ -542,8 +534,8 @@ const PRODUCTS = [
     "tags": {
       "food": true
     },
-    "valley": "bumburet",
-    "village": "Bumburet",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "250 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Honeycomb_at_breakfast.jpg/960px-Honeycomb_at_breakfast.jpg",
     "images": [
@@ -572,8 +564,8 @@ const PRODUCTS = [
       "food": true,
       "gift": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "350 g",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Dipper_stick_and_honey_in_a_jar.jpg/960px-Dipper_stick_and_honey_in_a_jar.jpg",
     "images": [
@@ -595,7 +587,7 @@ const PRODUCTS = [
       "materials": "Local sheep's wool",
       "name": "Rehmat (demo)",
       "time": "2–3 days per cap",
-      "village": "Chitral Town"
+      "village": "Lower Chitral"
     },
     "materials": "Sheep's wool",
     "method": "Hand-felted and shaped",
@@ -611,8 +603,8 @@ const PRODUCTS = [
       "clothing": true,
       "handmade": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "One size",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/A_young_man_with_a_pacole_hat_Iran_Canon_Photography_Mostafa_Meraji_09.jpg/960px-A_young_man_with_a_pacole_hat_Iran_Canon_Photography_Mostafa_Meraji_09.jpg",
     "images": [
@@ -632,7 +624,7 @@ const PRODUCTS = [
       "materials": "Fine sheep's wool",
       "name": "Sultan (demo)",
       "time": "3–4 days per cap",
-      "village": "Mastuj"
+      "village": "Upper Chitral"
     },
     "materials": "Fine sheep's wool",
     "method": "Hand-felted, dense finish",
@@ -644,13 +636,13 @@ const PRODUCTS = [
     "ptype": "Handmade",
     "rating": 4.9,
     "reviews": 92,
-    "story": "Mastuj's felt-makers are known for the density of their work. This premium pakol is felted longer and finished by hand for a cap that keeps its shape season after season.",
+    "story": "Upper Chitral's felt-makers are known for the density of their work. This premium pakol is felted longer and finished by hand for a cap that keeps its shape season after season.",
     "tags": {
       "clothing": true,
       "handmade": true
     },
-    "valley": "mastuj",
-    "village": "Mastuj",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "One size",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/A_young_man_with_a_pacole_hat_Iran_Canon_Photography_Mostafa_Meraji_05.jpg/960px-A_young_man_with_a_pacole_hat_Iran_Canon_Photography_Mostafa_Meraji_05.jpg",
     "images": [
@@ -671,7 +663,7 @@ const PRODUCTS = [
       "materials": "Local sheep's wool",
       "name": "Bibi Zara (demo)",
       "time": "4–5 days per shawl",
-      "village": "Booni"
+      "village": "Upper Chitral"
     },
     "materials": "Sheep's wool",
     "method": "Hand-loomed",
@@ -682,13 +674,13 @@ const PRODUCTS = [
     "ptype": "Handmade",
     "rating": 4.9,
     "reviews": 134,
-    "story": "In Booni, the loom still stands in many homes. Weaving a shawl takes days of steady work — warping, weaving and finishing — and each one carries its weaver's rhythm.",
+    "story": "In Upper Chitral, the loom still stands in many homes. Weaving a shawl takes days of steady work — warping, weaving and finishing — and each one carries its weaver's rhythm.",
     "tags": {
       "clothing": true,
       "handmade": true
     },
-    "valley": "booni",
-    "village": "Booni",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "2 metres",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Hand_Woven_Shawl.jpg/960px-Hand_Woven_Shawl.jpg",
     "images": [
@@ -708,7 +700,7 @@ const PRODUCTS = [
       "materials": "Local sheep's wool",
       "name": "Bibi Zara (demo)",
       "time": "2–3 days per metre",
-      "village": "Booni"
+      "village": "Upper Chitral"
     },
     "materials": "Sheep's wool",
     "method": "Hand-loomed",
@@ -724,8 +716,8 @@ const PRODUCTS = [
       "clothing": true,
       "handmade": true
     },
-    "valley": "mastuj",
-    "village": "Mastuj",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "Per metre",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Tweed_fabric.jpg/960px-Tweed_fabric.jpg",
     "images": [
@@ -749,13 +741,13 @@ const PRODUCTS = [
     "ptype": "Handmade",
     "rating": 4.8,
     "reviews": 71,
-    "story": "The waistcoat over shalwar kameez is Chitral's signature winter dress. Tailors in Chitral Town cut them from hand-woven patti, made to last a decade of winters.",
+    "story": "The waistcoat over shalwar kameez is Chitral's signature winter dress. Tailors in Lower Chitral cut them from hand-woven patti, made to last a decade of winters.",
     "tags": {
       "clothing": true,
       "handmade": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "Sizes M–XL",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Waistcoat_in_pakistan.jpg/960px-Waistcoat_in_pakistan.jpg",
     "images": [
@@ -770,13 +762,13 @@ const PRODUCTS = [
     "desc": "Thick hand-knitted socks for cold floors and colder nights.",
     "emoji": "🧦",
     "id": "w06",
-    "longDesc": "Three pairs of thick wool socks, knitted by hand in Reshun. Warm enough for unheated winter rooms and mountain nights.",
+    "longDesc": "Three pairs of thick wool socks, knitted by hand in Upper Chitral. Warm enough for unheated winter rooms and mountain nights.",
     "maker": {
       "craft": "Hand knitting",
       "materials": "Local sheep's wool",
       "name": "Maryam (demo)",
       "time": "1 day per pair",
-      "village": "Reshun"
+      "village": "Upper Chitral"
     },
     "materials": "Sheep's wool",
     "method": "Hand-knitted",
@@ -787,13 +779,13 @@ const PRODUCTS = [
     "ptype": "Handmade",
     "rating": 4.7,
     "reviews": 158,
-    "story": "Knitting fills the long winter evenings in Reshun. Socks are the first thing girls learn to knit — and these are knitted the traditional way, dense and warm.",
+    "story": "Knitting fills the long winter evenings in Upper Chitral. Socks are the first thing girls learn to knit — and these are knitted the traditional way, dense and warm.",
     "tags": {
       "clothing": true,
       "handmade": true
     },
-    "valley": "reshun",
-    "village": "Reshun",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "Free size",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Hand_knitted_socks.jpg/960px-Hand_knitted_socks.jpg",
     "images": [
@@ -823,8 +815,8 @@ const PRODUCTS = [
       "clothing": true,
       "handmade": true
     },
-    "valley": "booni",
-    "village": "Booni",
+    "valley": "upper-chitral",
+    "village": "Upper Chitral",
     "weight": "1.8 metres",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Purple_heather_pure_wool_infinity_scarf.jpg/960px-Purple_heather_pure_wool_infinity_scarf.jpg",
     "images": [
@@ -845,7 +837,7 @@ const PRODUCTS = [
       "materials": "Cotton canvas, silk thread",
       "name": "Nasreen (demo)",
       "time": "3–4 days per bag",
-      "village": "Drosh"
+      "village": "Lower Chitral"
     },
     "materials": "Cotton canvas, embroidery thread",
     "method": "Hand-embroidered panel, machine-stitched bag",
@@ -860,8 +852,8 @@ const PRODUCTS = [
     "tags": {
       "handmade": true
     },
-    "valley": "drosh",
-    "village": "Drosh",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "30 × 25 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Traditional_turkmen_embroidered_bag.jpg/960px-Traditional_turkmen_embroidered_bag.jpg",
     "images": [
@@ -881,7 +873,7 @@ const PRODUCTS = [
       "materials": "Cotton, silk thread",
       "name": "Nasreen (demo)",
       "time": "1–2 days per purse",
-      "village": "Drosh"
+      "village": "Lower Chitral"
     },
     "materials": "Cotton, embroidery thread, zip",
     "method": "Hand-embroidered, hand-finished",
@@ -898,8 +890,8 @@ const PRODUCTS = [
       "gift": true,
       "handmade": true
     },
-    "valley": "drosh",
-    "village": "Drosh",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "20 × 12 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Purse_%28ST391%29_-_Costume_Accessory-Purse_-_MoMu_Antwerp.jpg/960px-Purse_%28ST391%29_-_Costume_Accessory-Purse_-_MoMu_Antwerp.jpg",
     "images": [
@@ -920,7 +912,7 @@ const PRODUCTS = [
       "materials": "Seasoned walnut wood",
       "name": "Sher Wali (demo)",
       "time": "4–5 days per box",
-      "village": "Chitral Town"
+      "village": "Lower Chitral"
     },
     "materials": "Walnut wood, cloth lining",
     "method": "Hand-carved and polished",
@@ -931,13 +923,13 @@ const PRODUCTS = [
     "ptype": "Handmade",
     "rating": 4.9,
     "reviews": 118,
-    "story": "Walnut wood is Chitral's fine timber — dark, hard and beautifully grained. Carvers in Chitral Town shape it into boxes meant to be kept for a lifetime.",
+    "story": "Walnut wood is Chitral's fine timber — dark, hard and beautifully grained. Carvers in Lower Chitral shape it into boxes meant to be kept for a lifetime.",
     "tags": {
       "gift": true,
       "handmade": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "18 × 12 × 8 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Carved_wooden_box%2C_Kinh_ethnic_group%2C_Quang_Binh_province_-_Vietnam_National_Museum_of_Fine_Arts_-_Hanoi%2C_Vietnam_-_DSC05212.JPG/960px-Carved_wooden_box%2C_Kinh_ethnic_group%2C_Quang_Binh_province_-_Vietnam_National_Museum_of_Fine_Arts_-_Hanoi%2C_Vietnam_-_DSC05212.JPG",
     "images": [
@@ -958,7 +950,7 @@ const PRODUCTS = [
       "materials": "Fruit wood",
       "name": "Sher Wali (demo)",
       "time": "1 day per set",
-      "village": "Chitral Town"
+      "village": "Lower Chitral"
     },
     "materials": "Fruit wood, food-safe oil",
     "method": "Hand-carved, oil-finished",
@@ -973,8 +965,8 @@ const PRODUCTS = [
     "tags": {
       "handmade": true
     },
-    "valley": "garam-chashma",
-    "village": "Garam Chashma",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "Set of 4",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Hand_Carved_Wooden_Spoon.jpg/960px-Hand_Carved_Wooden_Spoon.jpg",
     "images": [
@@ -1003,8 +995,8 @@ const PRODUCTS = [
       "gift": true,
       "handmade": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "8 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Indigenous_%28Ojibwe%29_beaded_keychains.jpg/960px-Indigenous_%28Ojibwe%29_beaded_keychains.jpg",
     "images": [
@@ -1018,13 +1010,13 @@ const PRODUCTS = [
     "desc": "Pouch with embroidery inspired by Kalasha textile patterns.",
     "emoji": "👝",
     "id": "k01",
-    "longDesc": "A drawstring pouch embroidered with patterns inspired by the colourful textiles of the Kalasha valleys. Made by artisans in Bumburet.",
+    "longDesc": "A drawstring pouch embroidered with patterns inspired by the colourful textiles of the Kalasha valleys. Made by artisans in Lower Chitral.",
     "maker": {
       "craft": "Embroidery",
       "materials": "Cotton, wool thread",
       "name": "Gulnaz (demo)",
       "time": "2–3 days per pouch",
-      "village": "Bumburet"
+      "village": "Lower Chitral"
     },
     "materials": "Cotton, embroidery thread",
     "method": "Hand-embroidered",
@@ -1040,8 +1032,8 @@ const PRODUCTS = [
       "gift": true,
       "handmade": true
     },
-    "valley": "bumburet",
-    "village": "Bumburet",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "18 × 14 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Embroidery_on_a_shawl_from_Punjab_01.jpg/960px-Embroidery_on_a_shawl_from_Punjab_01.jpg",
     "images": [
@@ -1066,13 +1058,13 @@ const PRODUCTS = [
     "ptype": "Handmade",
     "rating": 4.8,
     "reviews": 47,
-    "story": "Beadwork is central to Kalasha adornment, with colours and patterns carrying local meaning. This piece is inspired by that tradition, strung by hand in Rumbur.",
+    "story": "Beadwork is central to Kalasha adornment, with colours and patterns carrying local meaning. This piece is inspired by that tradition, strung by hand in Lower Chitral.",
     "tags": {
       "gift": true,
       "handmade": true
     },
-    "valley": "rumbur",
-    "village": "Rumbur",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "45 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Kalash_womens_headdress.jpg/960px-Kalash_womens_headdress.jpg",
     "images": [
@@ -1101,8 +1093,8 @@ const PRODUCTS = [
     "tags": {
       "handmade": true
     },
-    "valley": "birir",
-    "village": "Birir",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "60 × 40 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Kalash_women_traditional_clothing.jpg/960px-Kalash_women_traditional_clothing.jpg",
     "images": [
@@ -1132,8 +1124,8 @@ const PRODUCTS = [
       "food": true,
       "gift": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "1.2 kg box",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Ramadan_Blessings_Gift.jpg/960px-Ramadan_Blessings_Gift.jpg",
     "images": [
@@ -1162,8 +1154,8 @@ const PRODUCTS = [
       "food": true,
       "gift": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "900 g box",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Honey_box.jpg/960px-Honey_box.jpg",
     "images": [
@@ -1194,8 +1186,8 @@ const PRODUCTS = [
       "food": true,
       "gift": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "1.5 kg box",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Ramadan_Blessings_Gift.jpg/960px-Ramadan_Blessings_Gift.jpg",
     "images": [
@@ -1225,8 +1217,8 @@ const PRODUCTS = [
       "food": true,
       "gift": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "900 g box",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gift_box.jpg/960px-Gift_box.jpg",
     "images": [
@@ -1255,8 +1247,8 @@ const PRODUCTS = [
       "gift": true,
       "handmade": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "1.8 kg box",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Exotic_Fruit_Gift_Basket_%284461109309%29.jpg/960px-Exotic_Fruit_Gift_Basket_%284461109309%29.jpg",
     "images": [
@@ -1285,8 +1277,8 @@ const PRODUCTS = [
       "gift": true,
       "handmade": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "2.2 kg box",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gift_box.jpg/960px-Gift_box.jpg",
     "images": [
@@ -1315,8 +1307,8 @@ const PRODUCTS = [
       "gift": true,
       "handmade": true
     },
-    "valley": "chitral-town",
-    "village": "Chitral Town",
+    "valley": "lower-chitral",
+    "village": "Lower Chitral",
     "weight": "2.5 kg box",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Precious_dates_gift.jpg/960px-Precious_dates_gift.jpg",
     "images": [
@@ -1341,7 +1333,7 @@ const PRODUCTS = [
     "tags": {
       "gift": true
     },
-    "valley": "chitral",
+    "valley": "lower-chitral",
     "weight": "Digital code",
     "image": "https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL3Jhd3BpeGVsX29mZmljZV8zNV9waG90b19vZl93aGl0ZV9naWZ0X2JveF93aXRoX3JlZF9yaWJib25fX2lzb19lOWRkZmNlOC05ZDljLTQ0ZjUtODc3Mi05NzhhODliMDdmNGJfMS5qcGc.jpg",
     "images": []
@@ -1363,7 +1355,7 @@ const PRODUCTS = [
     "tags": {
       "gift": true
     },
-    "valley": "chitral",
+    "valley": "lower-chitral",
     "weight": "Digital code",
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Giving_a_gift.jpg",
     "images": []
@@ -1384,7 +1376,7 @@ const PRODUCTS = [
     "tags": {
       "gift": true
     },
-    "valley": "chitral",
+    "valley": "lower-chitral",
     "weight": "Digital code",
     "image": "https://images.pexels.com/photos/10278973/pexels-photo-10278973.jpeg?auto=compress&w=1260&h=750&dpr=1",
     "images": []
@@ -1405,7 +1397,7 @@ const PRODUCTS = [
     "tags": {
       "gift": true
     },
-    "valley": "chitral",
+    "valley": "lower-chitral",
     "weight": "Digital code",
     "image": "https://images.pexels.com/photos/5486845/pexels-photo-5486845.jpeg?auto=compress&cs=tinysrgb&w=600",
     "images": []
@@ -1659,7 +1651,7 @@ function renderValleyFilter() {
   const sel = $("valleyFilter");
   if (!sel) return;
   const cur = sel.value || "all";
-  sel.innerHTML = '<option value="all">All valleys</option>';
+  sel.innerHTML = '<option value="all">All regions</option>';
   VALLEYS.forEach(function (v) {
     const count = PRODUCTS.filter(function (p) { return p.valley === v.id; }).length;
     if (count === 0 && v.id !== "chitral") return;

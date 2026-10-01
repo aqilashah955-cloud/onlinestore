@@ -2,17 +2,17 @@
 
 An online marketplace for genuine Chitrali products: dry fruits & foods,
 mountain honey, wool clothing, handicrafts, Kalasha heritage crafts and
-ready-made gift boxes — each product carrying its valley of origin.
+ready-made gift boxes — each product carrying its region of origin.
 Pure static site: no build step, no external dependencies. Product photos
 are real Wikimedia Commons images (sample catalogue).
 
 **Features**
 - Homepage: Shop Local, From the Mountains to Your Home, Made by Chitral,
-  Shop by Valley, Chitral Gift Boxes, Meet the Makers sections
-- Full catalogue with live search, category pills, valley filter, price
+  Shop by Region, Chitral Gift Boxes, Meet the Makers sections
+- Full catalogue with live search, category pills, region filter, price
   filter, chips (Handmade / Food / Clothing / Gifts / New / Best sellers /
   Wishlist) and 5 sort orders
-- Product cards: photo, 📍 origin valley, weight, rating, PKR price,
+- Product cards: photo, 📍 origin region, weight, rating, PKR price,
   discount badges, Add to Cart, Book Now (email), wishlist heart,
   Quick View modal
 - Quick View: photo gallery, origin/producer block, "The Story Behind This
@@ -33,7 +33,7 @@ are real Wikimedia Commons images (sample catalogue).
   the top of `app.js`
 - Products: edit the `PRODUCTS` array at the top of `app.js` — every field
   is documented in the comments there (sample/demo data)
-- Valleys: edit the `VALLEYS` array; maker profiles: `MAKERS`
+- Regions: edit the `VALLEYS` array; maker profiles: `MAKERS`
 - Palette: CSS variables at the top of `styles.css` (mountain-warm theme)
 
 **Put it on GitHub Pages**
