@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chitral Bazaar — Online Store</title>
+  <title>Chitral Bazaar — Authentic Products from Chitral</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <div id="promoBar" class="promo-bar">
-    <span>🎁 Use code <strong>CHITRAL10</strong> for 10% off your order</span>
+    <span>🎁 Use code <strong>CHITRAL10</strong> for 10% off · Straight from the valleys of Chitral</span>
     <button id="promoClose" class="promo-close" aria-label="Dismiss promotion">✕</button>
   </div>
 
@@ -19,7 +19,7 @@
         <span class="brand-logo">🏔️</span>
         <span id="storeName">Chitral Bazaar</span>
       </div>
-      <input id="searchInput" type="search" placeholder="Search products…" aria-label="Search products" />
+      <input id="searchInput" type="search" placeholder="Search apricots, honey, pakol…" aria-label="Search products" />
       <button id="cartBtn" class="cart-btn" aria-label="Open cart">
         🛒 Cart <span id="cartCount" class="cart-count">0</span>
       </button>
@@ -28,18 +28,58 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <p class="hero-kicker"><span class="kicker-line"></span>From the valleys of Chitral<span class="kicker-line"></span></p>
-      <h1 id="heroTitle">Welcome to Chitral Bazaar</h1>
-      <p class="hero-sub">Handpicked goods from the valleys of Chitral — delivered across Pakistan.</p>
+      <p class="hero-kicker"><span class="kicker-line"></span>Discover Chitral<span class="kicker-line"></span></p>
+      <h1 id="heroTitle">Authentic products from the mountains of Chitral.</h1>
+      <p class="hero-sub">Sun-dried apricots, mountain honey, hand-felted pakols and crafts — made, grown and harvested in the valleys of Chitral, Pakistan, delivered across the country.</p>
       <div id="categoryPills" class="pills"></div>
     </div>
     <div class="hero-scroll" aria-hidden="true"><span></span></div>
   </section>
 
   <main>
-    <section class="collections-section">
-      <h2>Shop by Collection</h2>
-      <div id="collectionCards" class="collection-cards"></div>
+    <!-- Shop Local: featured products -->
+    <section class="home-section">
+      <div class="section-head">
+        <h2>🛍️ Shop Local</h2>
+        <p>Handpicked favourites from Chitrali growers and artisans.</p>
+      </div>
+      <div id="featuredRow" class="hscroll-row"></div>
+    </section>
+
+    <!-- From the Mountains to Your Home -->
+    <section class="home-section alt">
+      <div class="section-head">
+        <h2>🏔️ From the Mountains to Your Home</h2>
+        <p>Dry fruits, honey and traditional foods from Chitral's orchards and apiaries.</p>
+      </div>
+      <div id="mountainsRow" class="hscroll-row"></div>
+    </section>
+
+    <!-- Made by Chitral -->
+    <section class="home-section">
+      <div class="section-head">
+        <h2>🧶 Made by Chitral</h2>
+        <p>Handmade crafts and wool products from Chitrali workshops.</p>
+      </div>
+      <div id="madebyRow" class="hscroll-row"></div>
+    </section>
+
+    <!-- Shop by Valley -->
+    <section class="home-section alt">
+      <div class="section-head">
+        <h2>📍 Shop by Valley</h2>
+        <p>Every product carries its origin. Explore Chitral valley by valley.</p>
+      </div>
+      <div id="valleyCards" class="valley-cards"></div>
+    </section>
+
+    <!-- Gift Boxes -->
+    <section class="home-section">
+      <div class="section-head">
+        <h2>🎁 Chitral Gift Boxes</h2>
+        <p>Ready-made bundles of Chitral's best — for family, friends and corporate gifting.</p>
+      </div>
+      <div id="giftboxRow" class="hscroll-row"></div>
     </section>
 
     <section class="giftcard-promo">
@@ -53,14 +93,68 @@
       </div>
     </section>
 
+    <!-- Meet the Makers -->
+    <section class="home-section alt">
+      <div class="section-head">
+        <h2>👨‍🌾 Meet the Makers</h2>
+        <p>The growers, beekeepers and artisans behind the products. <span class="demo-note">(Sample profiles — real maker stories coming soon.)</span></p>
+      </div>
+      <div id="makersRow" class="makers-row"></div>
+    </section>
+
+    <!-- Full catalogue with filters -->
     <section class="products-section">
+      <div class="section-head">
+        <h2>🧺 All Products</h2>
+        <p id="resultCount" class="result-count"></p>
+      </div>
+
+      <div class="filter-toolbar" id="filterToolbar">
+        <div class="filter-group">
+          <label>Valley
+            <select id="valleyFilter">
+              <option value="all">All valleys</option>
+            </select>
+          </label>
+          <label>Price
+            <select id="priceFilter">
+              <option value="all">Any price</option>
+              <option value="u1000">Under Rs 1,000</option>
+              <option value="1000-2500">Rs 1,000 – 2,500</option>
+              <option value="2500-5000">Rs 2,500 – 5,000</option>
+              <option value="o5000">Above Rs 5,000</option>
+            </select>
+          </label>
+          <label>Sort by
+            <select id="sortSelect">
+              <option value="popular">Popular</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="newest">Newest</option>
+              <option value="rating">Customer rating</option>
+            </select>
+          </label>
+        </div>
+        <div class="filter-chips">
+          <button type="button" class="chip" data-chip="handmade">🤲 Handmade</button>
+          <button type="button" class="chip" data-chip="food">🍑 Food</button>
+          <button type="button" class="chip" data-chip="clothing">🧥 Clothing</button>
+          <button type="button" class="chip" data-chip="gift">🎁 Gifts</button>
+          <button type="button" class="chip" data-chip="isNew">✨ New arrivals</button>
+          <button type="button" class="chip" data-chip="bestseller">🔥 Best sellers</button>
+          <button type="button" class="chip" data-chip="wishlist">❤️ Wishlist</button>
+          <button type="button" class="chip chip-clear" id="clearFilters">Clear ✕</button>
+        </div>
+      </div>
+
       <div id="productGrid" class="grid"></div>
     </section>
 
     <section class="about">
-      <div class="about-card">🚚<h3>Delivery Across Pakistan</h3><p>We ship to every city, town and village.</p></div>
+      <div class="about-card">🚚<h3>Delivery Across Pakistan</h3><p>We ship from Chitral to every city, town and village.</p></div>
       <div class="about-card">💵<h3>Cash on Delivery</h3><p>Pay in cash when your order arrives.</p></div>
-      <div class="about-card">🤝<h3>Local Artisans</h3><p>Authentic products sourced from Chitral.</p></div>
+      <div class="about-card">📍<h3>Valley of Origin</h3><p>Every product shows where in Chitral it comes from.</p></div>
+      <div class="about-card">🤝<h3>Local Makers</h3><p>Grown, harvested and handmade by Chitrali families.</p></div>
     </section>
   </main>
 
@@ -68,7 +162,7 @@
     <div class="footer-inner">
       <div class="footer-col">
         <h3 id="footerStoreName">Chitral Bazaar</h3>
-        <p>Handpicked goods from the valleys of Chitral — handicrafts, dry fruits, clothing, gemstones and more, delivered across Pakistan.</p>
+        <p>Authentic products from the mountains of Chitral — dry fruits, honey, wool clothing, handicrafts and gift boxes, delivered across Pakistan.</p>
       </div>
       <div class="footer-col">
         <h3>Shop</h3>
@@ -80,8 +174,15 @@
         <p><a id="emailLink" href="#">📧 Email us</a></p>
       </div>
     </div>
-    <p class="fine">© <span id="year"></span> <span class="store-name-foot">Chitral Bazaar</span>. All rights reserved.</p>
+    <p class="fine">© <span id="year"></span> <span class="store-name-foot">Chitral Bazaar</span>. All rights reserved. Sample catalogue — prices and details are demo data.</p>
   </footer>
+
+  <!-- Quick View modal -->
+  <div id="qvOverlay" class="overlay"></div>
+  <div id="qvModal" class="qv-modal" role="dialog" aria-modal="true" aria-label="Product details">
+    <button id="qvClose" class="icon-btn qv-close" aria-label="Close details">✕</button>
+    <div id="qvContent" class="qv-content"></div>
+  </div>
 
   <div id="cartOverlay" class="overlay"></div>
 
