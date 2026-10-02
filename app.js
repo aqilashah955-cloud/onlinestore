@@ -17,7 +17,7 @@
      village, method, materials, packaging, ptype, rating (0-5),
      reviews (count), featured, bestseller, isNew, added (YYYY-MM-DD),
      maker {name, village, craft, time, materials} (optional),
-     tags {handmade, food, clothing, gift}
+     tags {handmade, food, clothing, gift}, discreet (true = discreet packaging)
    ============================================================ */
 const STORE_NAME = "Chitral Bazaar";
 const WHATSAPP_NUMBER = "923456121725";
@@ -37,6 +37,8 @@ const CATEGORIES = [
   { id: "kalasha",     name: "Kalasha Heritage",   emoji: "🏔️" },
   { id: "giftboxes",   name: "Gift Boxes",         emoji: "🎁" },
   { id: "giftcards",   name: "Gift Cards",         emoji: "💳" },
+  { id: "womens",      name: "Women's Essentials", emoji: "👩" },
+  { id: "intimate",    name: "Intimate Care",      emoji: "🌸" },
 ];
 
 const VALLEYS = [
@@ -1402,6 +1404,345 @@ const PRODUCTS = [
     "image": "https://images.pexels.com/photos/5486845/pexels-photo-5486845.jpeg?auto=compress&cs=tinysrgb&w=600",
     "images": []
   }
+  ,
+  {
+    "added": "2026-10-02",
+    "bestseller": true,
+    "category": "womens",
+    "desc": "Soft cotton padded bra for everyday comfort.",
+    "emoji": "\U0001F459",
+    "id": "we01",
+    "isNew": true,
+    "longDesc": "A lightly padded everyday bra in breathable cotton blend. Soft cups, adjustable straps and a comfortable underband for daily wear. Sizes 32\u201340.",
+    "materials": "Cotton blend",
+    "name": "Cotton Padded Bra",
+    "packaging": "Sealed pack",
+    "price": 850,
+    "producer": "Chitral Bazaar",
+    "ptype": "Apparel",
+    "rating": 4.5,
+    "reviews": 38,
+    "tags": {
+      "clothing": true
+    },
+    "weight": "Sizes 32\u201340",
+    "image": "https://www.pabra.in/cdn/shop/files/ChatGPT_Image_Jul_19_2026_10_16_41_AM.png?v=1784437844&width=1024",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "womens",
+    "desc": "Light non-padded bra for daily wear.",
+    "emoji": "\U0001F459",
+    "id": "we02",
+    "isNew": true,
+    "longDesc": "A simple non-padded bra in soft cotton. Wireless comfort with adjustable straps \u2014 a light everyday choice. Sizes 32\u201340.",
+    "materials": "Cotton",
+    "name": "Daily Non-Padded Bra",
+    "packaging": "Sealed pack",
+    "price": 750,
+    "producer": "Chitral Bazaar",
+    "ptype": "Apparel",
+    "rating": 4.4,
+    "reviews": 26,
+    "tags": {
+      "clothing": true
+    },
+    "weight": "Sizes 32\u201340",
+    "image": "https://rukminim3.flixcart.com/image/640/558/xif0q/bra/p/3/5/non-padded-40a-1-regular-no-regular-women-cotton-bra-white-original-imahnja5xrmukka9.jpeg?q=60&crop=false",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "womens",
+    "desc": "Supportive sports bra for workouts and daily activity.",
+    "emoji": "\U0001F3BD",
+    "id": "we03",
+    "isNew": true,
+    "longDesc": "A medium-support sports bra with a snug, stretchy fit. Breathable fabric and a wide underband keep it comfortable during workouts, walks and daily activity. Sizes S\u2013XL.",
+    "materials": "Cotton-spandex blend",
+    "name": "Sports Bra",
+    "packaging": "Sealed pack",
+    "price": 950,
+    "producer": "Chitral Bazaar",
+    "ptype": "Apparel",
+    "rating": 4.6,
+    "reviews": 31,
+    "tags": {
+      "clothing": true
+    },
+    "weight": "Sizes S\u2013XL",
+    "image": "https://ae01.alicdn.com/kf/H6e7d478a46744015adcdf1448374de75Z.jpg",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "bestseller": true,
+    "category": "womens",
+    "desc": "Stretchy free-size bra that fits many sizes.",
+    "emoji": "\U0001F459",
+    "id": "we04",
+    "isNew": true,
+    "longDesc": "A pull-on stretch bra in flexible knit that fits a wide range of sizes. No hooks, no wires \u2014 just easy everyday comfort. Free size (fits approx. 32\u201338).",
+    "materials": "Stretch knit",
+    "name": "Free Size Stretch Bra",
+    "packaging": "Sealed pack",
+    "price": 650,
+    "producer": "Chitral Bazaar",
+    "ptype": "Apparel",
+    "rating": 4.5,
+    "reviews": 44,
+    "tags": {
+      "clothing": true
+    },
+    "weight": "Free size",
+    "image": "https://www.shestore.com.pk/cdn/shop/files/crossbackfreesizebra.webp?v=1686073630&width=600",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "womens",
+    "desc": "Bra with delicate lace trim detailing.",
+    "emoji": "\U0001F459",
+    "id": "we05",
+    "isNew": true,
+    "longDesc": "An everyday bra finished with soft lace trim. Light padding, adjustable straps and a smooth fit under clothes. Sizes 32\u201340.",
+    "materials": "Cotton blend, lace trim",
+    "name": "Lace Trim Bra",
+    "packaging": "Sealed pack",
+    "price": 1100,
+    "producer": "Chitral Bazaar",
+    "ptype": "Apparel",
+    "rating": 4.4,
+    "reviews": 19,
+    "tags": {
+      "clothing": true
+    },
+    "weight": "Sizes 32\u201340",
+    "image": "https://i.pinimg.com/originals/43/59/5b/43595b068d16c10f617bd358d6beeaf1.jpg",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "womens",
+    "desc": "Two-piece cotton night suit: shirt and pyjama.",
+    "emoji": "\U0001F45A",
+    "id": "we06",
+    "isNew": true,
+    "longDesc": "A comfortable two-piece night suit in soft cotton \u2014 a button shirt with full-length pyjama. Breathable and easy to wash. Sizes S\u2013L.",
+    "materials": "Cotton",
+    "name": "Cotton Night Suit (2-piece)",
+    "packaging": "Sealed pack",
+    "price": 1600,
+    "producer": "Chitral Bazaar",
+    "ptype": "Apparel",
+    "rating": 4.6,
+    "reviews": 22,
+    "tags": {
+      "clothing": true
+    },
+    "weight": "Sizes S\u2013L",
+    "image": "https://img-va.myshopline.com/image/store/1750955070182/Untitled-design-2025-12-02T012445-075.png?w=912&h=1520",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "womens",
+    "desc": "Smooth satin nightdress with lace trim.",
+    "emoji": "\U0001F45A",
+    "id": "we07",
+    "isNew": true,
+    "longDesc": "A soft satin nightdress with lace trim detailing. Light, smooth fabric with thin straps \u2014 a comfortable night option. Sizes S\u2013L.",
+    "materials": "Satin",
+    "name": "Satin Night Suit",
+    "packaging": "Sealed pack",
+    "price": 2200,
+    "producer": "Chitral Bazaar",
+    "ptype": "Apparel",
+    "rating": 4.5,
+    "reviews": 15,
+    "tags": {
+      "clothing": true
+    },
+    "weight": "Sizes S\u2013L",
+    "image": "https://i.etsystatic.com/47233008/c/645/645/62/60/il/7d9a14/7931832277/il_600x600.7931832277_bij8.jpg",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "bestseller": true,
+    "category": "womens",
+    "desc": "Day-use sanitary pads, pack of 10.",
+    "emoji": "\U0001FA79",
+    "id": "we08",
+    "isNew": true,
+    "longDesc": "Sanitary pads for daytime use with a soft top layer and adhesive backing. Pack of 10 individually wrapped pads.",
+    "materials": "Absorbent core, soft cover",
+    "name": "Sanitary Pads \u2013 Day (pack of 10)",
+    "packaging": "Sealed pack",
+    "price": 380,
+    "producer": "Chitral Bazaar",
+    "ptype": "Personal care",
+    "rating": 4.6,
+    "reviews": 51,
+    "tags": {},
+    "weight": "Pack of 10",
+    "image": "https://cdn.shopify.com/s/files/1/0626/6503/1793/files/front-images.png?v=1759902094",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "womens",
+    "desc": "Longer night-use pads, pack of 8.",
+    "emoji": "\U0001F319",
+    "id": "we09",
+    "isNew": true,
+    "longDesc": "Extra-length sanitary pads for overnight use, with adhesive backing. Pack of 8 individually wrapped pads.",
+    "materials": "Absorbent core, soft cover",
+    "name": "Sanitary Pads \u2013 Night (pack of 8)",
+    "packaging": "Sealed pack",
+    "price": 420,
+    "producer": "Chitral Bazaar",
+    "ptype": "Personal care",
+    "rating": 4.5,
+    "reviews": 33,
+    "tags": {},
+    "weight": "Pack of 8",
+    "image": "https://cdn.shopclues.com/images1/detailed/106068/149449151-106068789-1588162646.jpg",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "womens",
+    "desc": "Thin daily panty liners, pack of 20.",
+    "emoji": "\U0001FA79",
+    "id": "we10",
+    "isNew": true,
+    "longDesc": "Slim, breathable panty liners for everyday freshness. Pack of 20 individually wrapped liners.",
+    "materials": "Absorbent core, soft cover",
+    "name": "Panty Liners (pack of 20)",
+    "packaging": "Sealed pack",
+    "price": 300,
+    "producer": "Chitral Bazaar",
+    "ptype": "Personal care",
+    "rating": 4.4,
+    "reviews": 28,
+    "tags": {},
+    "weight": "Pack of 20",
+    "image": "https://mophethonline.com/wp-content/uploads/2024/10/Pretty-Intimate-Panty-Liners-Normal-A-Pack-of-30-450x450.jpg",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "intimate",
+    "desc": "Precision razor for intimate grooming.",
+    "discreet": true,
+    "emoji": "\U0001FA92",
+    "id": "ic01",
+    "isNew": true,
+    "longDesc": "A small precision razor designed for intimate and bikini-area grooming. Includes a protective cap for safe storage.",
+    "materials": "Stainless steel blade, plastic handle",
+    "name": "Women's Intimate Shaving Razor",
+    "packaging": "Plain, unmarked packaging",
+    "price": 550,
+    "producer": "Chitral Bazaar",
+    "ptype": "Personal care",
+    "rating": 4.5,
+    "reviews": 21,
+    "tags": {},
+    "weight": "1 razor + cap",
+    "image": "https://www.tinkleusa.com/cdn/shop/files/EVE3D-Thumb-1.jpg?v=1686774416&width=1100",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "intimate",
+    "desc": "Electric trimmer for bikini-area grooming.",
+    "discreet": true,
+    "emoji": "\u2702\uFE0F",
+    "id": "ic02",
+    "isNew": true,
+    "longDesc": "A compact electric trimmer with dual heads for precise bikini-area grooming. USB rechargeable and easy to clean.",
+    "materials": "ABS body, stainless steel heads",
+    "name": "Bikini Trimmer",
+    "packaging": "Plain, unmarked packaging",
+    "price": 1400,
+    "producer": "Chitral Bazaar",
+    "ptype": "Personal care",
+    "rating": 4.4,
+    "reviews": 17,
+    "tags": {},
+    "weight": "Trimmer + heads",
+    "image": "https://m.media-amazon.com/images/I/61aUdDkE7WL.jpg_BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "intimate",
+    "desc": "Mild daily intimate hygiene wash.",
+    "discreet": true,
+    "emoji": "\U0001F9F4",
+    "id": "ic03",
+    "isNew": true,
+    "longDesc": "A gentle cleansing wash for daily intimate hygiene. Mild formula in a 100 ml bottle.",
+    "materials": "Mild cleansing formula",
+    "name": "Gentle Intimate Wash",
+    "packaging": "Plain, unmarked packaging",
+    "price": 650,
+    "producer": "Chitral Bazaar",
+    "ptype": "Personal care",
+    "rating": 4.5,
+    "reviews": 24,
+    "tags": {},
+    "weight": "100 ml",
+    "image": "https://momdaughts.com/cdn/shop/files/medicated-inti-wash-hygiene-wash-for-women-100-ml-745630.jpg?v=1779731730&width=500",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "intimate",
+    "desc": "Handheld personal massager with simple controls.",
+    "discreet": true,
+    "emoji": "\U0001F33A",
+    "id": "ic04",
+    "isNew": true,
+    "longDesc": "A handheld personal massager with an easy-grip handle and simple push-button controls. Discreet design, easy to clean.",
+    "materials": "Body-safe plastic",
+    "name": "Personal Body Massager",
+    "packaging": "Plain, unmarked packaging",
+    "price": 2800,
+    "producer": "Chitral Bazaar",
+    "ptype": "Personal wellness",
+    "rating": 4.3,
+    "reviews": 12,
+    "tags": {},
+    "weight": "1 massager",
+    "image": "https://www.homedics.com/cdn/shop/files/tm-pbm-01_1000x1000_leftface__10263.jpg?v=1755232567",
+    "images": []
+  },
+  {
+    "added": "2026-10-02",
+    "category": "intimate",
+    "desc": "Smooth personal lubricant, 300 ml bottle.",
+    "discreet": true,
+    "emoji": "\U0001F4A7",
+    "id": "ic05",
+    "isNew": true,
+    "longDesc": "A smooth personal lubricant in a 300 ml bottle. Silky texture, easy to wash off.",
+    "materials": "Water-friendly gel formula",
+    "name": "Personal Lubricant",
+    "packaging": "Plain, unmarked packaging",
+    "price": 900,
+    "producer": "Chitral Bazaar",
+    "ptype": "Personal wellness",
+    "rating": 4.4,
+    "reviews": 16,
+    "tags": {},
+    "weight": "300 ml",
+    "image": "https://down-sg.img.susercontent.com/file/sg-11134201-823q1-motg7n1haia401",
+    "images": []
+  }
+
 ];
 
 /* ---------------- state ---------------- */
@@ -1510,7 +1851,8 @@ function cardHTML(p) {
     '<div class="card-body">' +
       '<span class="card-cat">' + (cat ? cat.name : p.category) + "</span>" +
       "<h3>" + esc(p.name) + "</h3>" +
-      '<span class="card-origin">📍 ' + esc(v.name) + (p.weight ? ' <span class="card-weight">' + esc(p.weight) + "</span>" : "") + "</span>" +
+      '<span class="card-origin">' + (p.valley ? "📍 " + esc(v.name) : "✨ Bazaar Pick") + (p.weight ? ' <span class="card-weight">' + esc(p.weight) + "</span>" : "") + "</span>" +
+      (p.discreet ? '<span class="discreet-pill">📦 Discreet packaging</span>' : "") +
       '<span class="card-rating"><span class="stars">' + stars(p) + "</span> " + (p.rating || 0).toFixed(1) + " (" + (p.reviews || 0) + ")</span>" +
       '<p class="card-desc">' + esc(p.desc) + "</p>" +
       '<div class="card-row">' +
@@ -1725,10 +2067,11 @@ function openQuickView(id) {
         (p.oldPrice && p.oldPrice > p.price ? '<span class="old-price">' + fmt(p.oldPrice) + "</span><span class='off-tag'>−" + off + "%</span>" : "") +
         "</div>" +
         '<div class="qv-origin-box">' +
-          "<div>📍 <strong>Origin:</strong> " + esc(v.name) + ", Chitral, Pakistan</div>" +
+          (p.valley ? "<div>📍 <strong>Origin:</strong> " + esc(v.name) + ", Chitral, Pakistan</div>" : "") +
           (p.producer ? "<div>👨‍🌾 <strong>Producer:</strong> " + esc(p.producer) + "</div>" : "") +
-          "<div>🏔️ <strong>Made in:</strong> Chitral, Pakistan</div>" +
+          (p.valley ? "<div>🏔️ <strong>Made in:</strong> Chitral, Pakistan</div>" : "") +
           (p.ptype ? "<div>📦 <strong>Product type:</strong> " + esc(p.ptype) + "</div>" : "") +
+          (p.discreet ? "<div>🤐 <strong>Packaging:</strong> Discreet, unmarked packaging</div>" : "") +
         "</div>" +
         (p.longDesc ? '<div class="qv-section"><h4>About this product</h4><p>' + esc(p.longDesc) + "</p></div>" : "") +
         (p.story ? '<div class="qv-section"><h4>The Story Behind This Product</h4><p>' + esc(p.story) + "</p></div>" : "") +
