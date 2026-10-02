@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Marketplace product listings
+    match /products/{docId} {
+
+      // Public storefront: anyone can read APPROVED products.
+      // Sellers can read their own listings (any status).
+      // The store owner can read everything (for approvals).
+      allow read: if resource.data.status == 'approved'
+        || (request.auth != null && request.auth.token.email == 'nizarsyed74@gmail.com')
+        || (request.auth != null && resource.data.sellerId == request.auth.uid);
+
+      // Sellers create new listings: must start as "pending",
+      // must belong to the signed-in seller.
+      allow create: if request.auth != null
+        && request.resource.data.status == 'pending'
+        && request.resource.data.sellerId == request.auth.uid
+        && request.resource.data.sellerEmail == request.auth.token.email
+        && request.resource.data.name is string
+        && request.resource.data.price is number
+        && request.resource.data.category is string;
+
+      // Sellers may edit their own listings (name, price, photos, ...)
+      // but cannot approve their own products or move them to
+      // another seller. Editing a rejected listing re-submits it
+      // as "pending". The owner can change anything (approve/reject).
+      allow update: if request.auth != null
+        && (
+          request.auth.token.email == 'nizarsyed74@gmail.com'
+          || (
+            resource.data.sellerId == request.auth.uid
+            && request.resource.data.sellerId == resource.data.sellerId
+            && request.resource.data.sellerEmail == resource.data.sellerEmail
+            && request.resource.data.status in ['pending', 'rejected']
+          )
+        );
+
+      // Sellers can delete their own listings; owner can delete any.
+      allow delete: if request.auth != null
+        && (
+          request.auth.token.email == 'nizarsyed74@gmail.com'
+          || resource.data.sellerId == request.auth.uid
+        );
+    }
+  }
+}

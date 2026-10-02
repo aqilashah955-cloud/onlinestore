@@ -1,0 +1,16 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Seller product photos: anyone can view, but only the signed-in
+    // seller who owns the folder can upload. Max 5 MB per file,
+    // images only.
+    match /seller-products/{uid}/{fileName} {
+      allow read;
+      allow write: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}
