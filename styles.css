@@ -1065,3 +1065,23 @@ body { overflow-x: hidden; }
   .card { opacity: 1; transform: none; }
   .hero-scroll { display: none; }
 }
+
+/* Customer reviews (quick view) */
+.qv-reviews { margin-top: 6px; }
+.rev-empty { color: var(--muted); font-size: .9rem; margin: 6px 0 4px; }
+.rev-list { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 4px; }
+.rev-item { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; background: var(--card); }
+.rev-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
+.rev-head .stars { color: #e8a020; letter-spacing: 2px; }
+.rev-item p { font-size: .9rem; margin: 2px 0 4px; }
+.rev-date { font-size: .76rem; color: var(--muted); }
+.rev-form { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.rev-form h5 { font-size: .95rem; }
+.rev-stars { display: flex; gap: 2px; }
+.rev-stars button { background: none; border: none; font-size: 1.7rem; line-height: 1; cursor: pointer; color: #cbb98d; padding: 0 3px; }
+.rev-stars button.on { color: #e8a020; }
+.rev-form input, .rev-form textarea { padding: 10px 12px; border: 1px solid var(--border); border-radius: 12px; font-family: inherit; font-size: .9rem; background: #fff; color: var(--text); }
+.rev-note { font-size: .84rem; color: var(--danger); min-height: 1.2em; margin: 0; }
+.rev-sent { margin-top: 10px; padding: 12px; border: 1px dashed var(--border); border-radius: 12px; background: #f4faf6; display: flex; flex-direction: column; gap: 8px; }
+.rev-sent p { font-size: .9rem; margin: 0; }
+.rev-hint { font-size: .78rem; color: var(--muted); }
