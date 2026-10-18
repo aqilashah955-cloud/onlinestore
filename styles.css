@@ -1085,3 +1085,18 @@ body { overflow-x: hidden; }
 .rev-sent { margin-top: 10px; padding: 12px; border: 1px dashed var(--border); border-radius: 12px; background: #f4faf6; display: flex; flex-direction: column; gap: 8px; }
 .rev-sent p { font-size: .9rem; margin: 0; }
 .rev-hint { font-size: .78rem; color: var(--muted); }
+
+/* Partner Picks (affiliate products) */
+.aff-disclosure { display: block; font-size: .8rem; color: var(--muted); margin-top: 4px; }
+.hscroll-row .aff-card { min-width: 250px; max-width: 270px; scroll-snap-align: start; flex-shrink: 0; position: relative; opacity: 1; transform: none; }
+.aff-badge { position: absolute; top: 10px; left: 10px; z-index: 2; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; color: #fff; }
+.aff-daraz { background: #f85606; }
+.aff-amazon { background: #232f3e; }
+.aff-price { font-weight: 800; font-size: 1rem; margin: 4px 0; }
+.aff-desc { font-size: .86rem; color: var(--muted); margin: 0 0 10px; }
+.aff-btn { display: block; text-align: center; padding: 11px; border-radius: 12px; font-weight: 700; text-decoration: none; color: #fff; margin-top: 4px; }
+.aff-daraz-btn { background: #f85606; }
+.aff-daraz-btn:hover { background: #d94a05; }
+.aff-amazon-btn { background: #ff9900; color: #232f3e; }
+.aff-amazon-btn:hover { background: #e88b00; }
+.aff-shipped { font-size: .76rem; color: var(--muted); text-align: center; margin: 6px 0 0; }
