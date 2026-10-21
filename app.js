@@ -1,5 +1,5 @@
 /* ============================================================
-   Chitral Bazaar — storefront logic
+   Hindukush Emporium — storefront logic
    Product data lives in products.js (loaded first).
    Customer reviews live in reviews.js (loaded after).
    ============================================================ */
@@ -111,7 +111,7 @@ function cardHTML(p) {
     '<div class="card-body">' +
       '<span class="card-cat">' + (cat ? cat.name : p.category) + "</span>" +
       "<h3>" + esc(p.name) + "</h3>" +
-      '<span class="card-origin">' + (p.valley ? "📍 " + esc(v.name) : "✨ Bazaar Pick") + (p.weight ? ' <span class="card-weight">' + esc(p.weight) + "</span>" : "") + "</span>" +
+      '<span class="card-origin">' + (p.valley ? "📍 " + esc(v.name) : "✨ Emporium Pick") + (p.weight ? ' <span class="card-weight">' + esc(p.weight) + "</span>" : "") + "</span>" +
       (p.discreet ? '<span class="discreet-pill">📦 Discreet packaging</span>' : "") +
       '<span class="card-rating"><span class="stars">' + stars(p) + "</span> " + (p.rating || 0).toFixed(1) + " (" + (p.reviews || 0) + ")</span>" +
       '<p class="card-desc">' + esc(p.desc) + "</p>" +

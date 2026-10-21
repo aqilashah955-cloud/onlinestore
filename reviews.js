@@ -1,4 +1,4 @@
-/* Chitral Bazaar — customer reviews (quick view).
+/* Hindukush Emporium — customer reviews (quick view).
    Reviews are stored in the visitor's own browser (localStorage) and shown
    on their device. A "Send via WhatsApp" button lets the store owner receive
    genuine reviews for moderation before publishing them in the catalogue. */
@@ -49,7 +49,7 @@ function reviewsHTML(p) {
   return h;
 }
 function reviewSentHTML(p, entry) {
-  const msg = "*New Product Review \u2014 Chitral Bazaar*\n" +
+  const msg = "*New Product Review \u2014 Hindukush Emporium*\n" +
     "Product: " + p.name + "\n" +
     "Name: " + entry.name + "\n" +
     "Rating: " + entry.rating + "/5\n" +

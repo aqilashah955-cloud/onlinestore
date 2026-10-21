@@ -1,4 +1,4 @@
-# Chitral Bazaar — Authentic Local Marketplace
+# Hindukush Emporium — Authentic Local Marketplace
 
 An online marketplace for genuine Chitrali products: dry fruits & foods,
 mountain honey, wool clothing, handicrafts, Kalasha heritage crafts and
